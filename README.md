@@ -1,7 +1,7 @@
 # Vbank
 Bank Management System
 
-This project is about a bank (focused in get brazilian data like "CPF" and "CEP") 
+This project is about a bank (focused in get brazilian data like "CPF" and "CEP").
 
 In this workflow I tried to put my all learning efforts to make a project proposed by @carvalhonicollas at nc-sti team.
 
