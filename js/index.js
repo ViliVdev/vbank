@@ -170,5 +170,5 @@ function loadUser(){
 `};
 
 function building(){
-    alert("Objeto em construção")
+    alert("Objeto em construção");
 };
