@@ -57,7 +57,6 @@ class User {
         this.cashindate = cashindate;
         this.cashoutdate = cashoutdate;
         this.tx = tx;
-        //history = Array;
     }
     get txin() {
         return this.balance += this.cashin;
@@ -85,15 +84,15 @@ class User {
     }
 };
 
-users.push(new User("69d837746a7eeb80c5ba18d2b2fa","3c8f692f6e08","123456789-11","Joao da Silva",50000,"11-985554444","99991-000",0,0,0,[],Date.now,Date.now,0));
-users.push(new User("69d83774697eeb80c5ba18d2b2fa","3c8f692f6e08","123456789-22","Maria da Silva",17000,"22-985554444","99992-000",0,0,0,[],Date.now,Date.now,0));
-users.push(new User("69d83774687eeb80c5ba18d2b2fa","3c8f692f6e08","123456789-33","Rafael da Silva",9000,"33-985554444","99993-000",0,0,0,[],Date.now,Date.now,0));
-users.push(new User("69d837746f7eeb80c5ba18d2b2fa","3c8f692f6e08","123456789-44","Gabriela da Silva",68000,"44-985554444","99994-000",0,0,0,[],Date.now,Date.now,0));
-users.push(new User("69d837746e7eeb80c5ba18d2b2fa","3c8f692f6e08","123456789-55","Pedro da Silva",34000,"55-985554444","99995-000",0,0,0,[],Date.now,Date.now,0));
-users.push(new User("69d837746d7eeb80c5ba18d2b2fa","3c8f692f6e08","123456789-66","Carlos da Silva",45000,"66-985554444","99996-000",0,0,0,[],Date.now,Date.now,0));
-users.push(new User("69d837746c7eeb80c5ba18d2b2fa","3c8f692f6e08","123456789-77","Sandra da Silva",22000,"77-985554444","99997-000",0,0,0,[],Date.now,Date.now,0));
-users.push(new User("69d83774637eeb80c5ba18d2b2fa","3c8f692f6e08","123456789-88","Felipe da Silva",6000,"88-985554444","99998-000",0,0,0,[],Date.now,Date.now,0));
-users.push(new User("69d83774627eeb80c5ba18d2b2fa","3c8f692f6e08","123456789-99","Jose da Silva",57000,"99-985554444","99999-000",0,0,0,[],Date.now,Date.now,0));
+users.push(new User("69d837746a7eeb80c5ba18d2b2fa","3c8f692f6e08","123456789-11","Joao da Silva",50000,"11-985554444","99991-000",0,0,0,[],new Date(),new Date(),0));
+users.push(new User("69d83774697eeb80c5ba18d2b2fa","3c8f692f6e08","123456789-22","Maria da Silva",17000,"22-985554444","99992-000",0,0,0,[],new Date(),new Date(),0));
+users.push(new User("69d83774687eeb80c5ba18d2b2fa","3c8f692f6e08","123456789-33","Rafael da Silva",9000,"33-985554444","99993-000",0,0,0,[],new Date(),new Date(),0));
+users.push(new User("69d837746f7eeb80c5ba18d2b2fa","3c8f692f6e08","123456789-44","Gabriela da Silva",68000,"44-985554444","99994-000",0,0,0,[],new Date(),new Date(),0));
+users.push(new User("69d837746e7eeb80c5ba18d2b2fa","3c8f692f6e08","123456789-55","Pedro da Silva",34000,"55-985554444","99995-000",0,0,0,[],new Date(),new Date(),0));
+users.push(new User("69d837746d7eeb80c5ba18d2b2fa","3c8f692f6e08","123456789-66","Carlos da Silva",45000,"66-985554444","99996-000",0,0,0,[],new Date(),new Date(),0));
+users.push(new User("69d837746c7eeb80c5ba18d2b2fa","3c8f692f6e08","123456789-77","Sandra da Silva",22000,"77-985554444","99997-000",0,0,0,[],new Date(),new Date(),0));
+users.push(new User("69d83774637eeb80c5ba18d2b2fa","3c8f692f6e08","123456789-88","Felipe da Silva",6000,"88-985554444","99998-000",0,0,0,[],new Date(),new Date(),0));
+users.push(new User("69d83774627eeb80c5ba18d2b2fa","3c8f692f6e08","123456789-99","Jose da Silva",57000,"99-985554444","99999-000",0,0,0,[],new Date(),new Date(),0));
 
 console.log(users);
 
@@ -105,15 +104,11 @@ function submitManager () {
     function trustManager(etm) {
     const manlogin = Encrypt(document.getElementById("manlogin").value);
     const manpass = Encrypt(document.getElementById("manpass").value);
-    console.log(manlogin);
-    console.log(manpass);
     const foundManager = managers.find(Manager => Manager.login == manlogin);
     if (foundManager == undefined || null){
         alert("Por favor verifique o login e senha inseridos!");
     } else{
         console.log(foundManager);
-        console.log(foundManager.login);
-        console.log(foundManager.pass);
     if(manpass == foundManager.pass){
         alert("Você está entrando num ambiente autenticado! Clique para prosseguir!");
         loadManager();
@@ -144,9 +139,10 @@ function submitNewUser () {
     const usercep = document.getElementById("cep").value;
     const foundUser = users.find(User => User.login == userlogin);
     const foundCpf = users.find(User => User.cpf == usercpf);
+    console.log(foundUser);
     if((foundUser == undefined || null)&&(foundCpf == undefined || null)){
         if(userpass == userpasstrue){
-            users.push(new User (userlogin,userpass,usercpf,username,userbalance,userphone,usercep,0,0,0,[],Date.now,Date.now,0));
+            users.push(new User (userlogin,userpass,usercpf,username,userbalance,userphone,usercep,0,0,0,[],new Date(),new Date(),0));
             alert("Usuário criado com sucesso!");
             console.log(users);
             } else{
@@ -173,8 +169,6 @@ function submitUser () {
         const submituserpass = Encrypt(document.getElementById("userpass").value);
         const submitFoundUser = users.find(User => User.login == submituserlogin);
         console.log(submitFoundUser);
-        console.log(submitFoundUser.login);
-        console.log(submitFoundUser.pass);
         if(submitFoundUser == undefined || null){
             alert("Usuário não encontrado na base de dados!");
         } else{
@@ -208,12 +202,13 @@ function txin() {
         } else{
             if(txinpass == txinFoundUser.pass){
                 txinFoundUser.cashin = txincashin;
+                txinFoundUser.cashindate = new Date();
                 txinFoundUser.txin;
                 txinFoundUser.txi;
                 alert("Obrigado por depositar $ " + txinFoundUser.cashin + " no Vbank!");
                 console.log(txinFoundUser);
                 txinFoundUser.hst;
-                alert("Gravada as seguintes ações no seu extrato: Saldo: $ " + txinFoundUser.balance + " Depositado: $ " + txinFoundUser.cashin);
+                alert("Gravadas as seguintes ações no seu extrato: Saldo: $ " + txinFoundUser.balance + " Depositado: $ " + txinFoundUser.cashin + " em " + txinFoundUser.cashindate);
                 console.log(txinFoundUser);
                 } else{
                     alert("Por favor verifique o login e senha inseridos!");
@@ -223,7 +218,7 @@ function txin() {
         eti.stopImmediatePropagation();
         eti.preventDefault();
     };
-}
+};
 
 function txout() {
     document.querySelector("#bankuserform");
@@ -239,12 +234,13 @@ function txout() {
         } else{
             if(txoutpass == txoutFoundUser.pass){
                 txoutFoundUser.cashout = txoutcashout;
+                txoutFoundUser.cashoutdate = new Date();
                 txoutFoundUser.txout;
                 txoutFoundUser.txi;
                 alert("Realizado saque de $ " + txoutFoundUser.cashout + " ! Obrigado por usar o Vbank!");
                 console.log(txoutFoundUser);
                 txoutFoundUser.hst;
-                alert("Gravada as seguintes ações no seu extrato: Saldo: $ " + txoutFoundUser.balance + " Sacado: $ " + txoutFoundUser.cashout);
+                alert("Gravadas as seguintes ações no seu extrato: Saldo: $ " + txoutFoundUser.balance + " Sacado: $ " + txoutFoundUser.cashout + " em " + txoutFoundUser.cashoutdate);
                 console.log(txoutFoundUser);
                 } else{
                     alert("Por favor verifique o login e senha inseridos!");
@@ -254,4 +250,4 @@ function txout() {
         eto.stopImmediatePropagation();
         eto.preventDefault();
     };
-}
+};
