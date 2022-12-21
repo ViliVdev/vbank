@@ -32,4 +32,4 @@ user(email): demo1@demo.com. demo2@demo.com ... demo9@demo.com
 password: 123456
 
 
-If you have some regard and inprovement, give a comment or report a issue!
+If you have some regard and inprovement, give a comment or report an issue!
