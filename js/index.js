@@ -17,8 +17,8 @@ function loadProject(){
 
 	
 	<div id="container">
-	<p>Meu nome é Cleber Vilela.</p>
-	<p>Projeto de programação VBank!</p>
+	<p>Olá nesta página eu busco montar um sistema que simula um ambiente bancário para saques e depósitos.</p>
+	<p>O projeto de programação se chama VBank! Viliv Bank!</p>
 	</div>
 `}
 
@@ -27,8 +27,9 @@ function loadAbout(){
 
 	
 	<div id="container">
-	<p>Meu nome é Cleber Vilela.</p>
-	<p>Apaixonado por tecnologia</p>
+	<p>Olá, meu nome é Cleber Vilela.</p>
+	<p>Sou Apaixonado por tecnologia e estou em constante aprendizado.</p>
+    <p>No momento focado em desenvolvimento Fullstack com JavaScript.</p>
 	</div>
 `}
 
@@ -168,8 +169,8 @@ function loadUser(){
 	document.getElementById("app").innerHTML = `
 
 	<div id="container">
-        <button onclick="txin()" type="button">-SALDO-</button>
-        <button onclick="txin()" type="button">-EXTRATO-</button>
+        <button onclick="alert("Em construção")" type="button">-SALDO-</button>
+        <button onclick="alert("Em construção")" type="button">-EXTRATO-</button>
     </div>
     <div id="form">
                 <div id="form">

@@ -229,7 +229,7 @@ function txout() {
     document.querySelector("#bankuserform");
     document.addEventListener("submit", trustOut);
     function trustOut(eto) {
-        const txoutcashin = parseFloat(document.getElementById("bankuservalue").value);
+        const txoutcashout = parseFloat(document.getElementById("bankuservalue").value);
         const txoutlogin = Encrypt(document.getElementById("bankuserlogin").value);
         const txoutpass = Encrypt(document.getElementById("bankuserpass").value);
         const txoutFoundUser = users.find(User => User.login == txoutlogin);
