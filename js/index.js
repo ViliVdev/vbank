@@ -171,4 +171,4 @@ function loadUser(){
 
 function building(){
     alert("Objeto em construção")
-}
+};
