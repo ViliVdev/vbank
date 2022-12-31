@@ -15,7 +15,7 @@ The frontend is in portuguese, but if you look out at code and inspect it, will 
 
 This project use so much injections from JavaScript in HTML DOM. So if you plan to use at some sensitive data I recommend to do some sanitation and move some functions to inside authentication mecanisms.
 
-Talking about authentication, I made a custom cypher based in AES Js. Use Encrypt() and Decrypt() to encode and decode sensitive data like logins and passwords. Be free to alter the key in Cypher to customize your encryption method.
+Talking about authentication, I made a custom cypher based in AES JS. Use Encrypt() and Decrypt() to encode and decode sensitive data like logins and passwords. Beware that is just for educational purpose. Passwords usually are secured by hashing algos like SHA256. Be free to alter the key in Cypher to customize your encryption method.
 
 To store data was used classes, arrays, get and set methods for put all these data in arrays and these arrays in classes.
 
@@ -23,12 +23,25 @@ Now let's move on to how to test and enter in system:
 
 /******Manager demo login******/
 
-user: gerentevbank
-password: senhademo
+user: 
+
+gerentevbank
+
+password: 
+
+senhademo
 
 /*******User demo login*******/
 
-user(email): demo1@demo.com. demo2@demo.com ... demo9@demo.com
+user(email): 
+
+demo1@demo.com
+demo2@demo.com
+.
+.
+.
+demo9@demo.com
+
 password: 123456
 
 
